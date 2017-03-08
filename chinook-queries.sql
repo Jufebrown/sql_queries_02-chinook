@@ -19,6 +19,10 @@ FROM Employee
 WHERE Title = "Sales Support Agent"
 
 --05 Provide a query showing a unique list of billing countries from the Invoice table.
+SELECT BillingCountry
+FROM Invoice
+GROUP BY BillingCountry
+
 --06 Provide a query showing the invoices of customers who are from Brazil.
 --07 Provide a query that shows the invoices associated with each sales agent. The resultant table should include the Sales Agent's full name.
 --08 Provide a query that shows the Invoice Total, Customer name, Country and Sale Agent name for all invoices and customers.
