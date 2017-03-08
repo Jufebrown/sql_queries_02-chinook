@@ -48,7 +48,13 @@ FROM Invoice
 WHERE InvoiceDate LIKE "2011%"
 
 --10 Looking at the InvoiceLine table, provide a query that COUNTs the number of line items for Invoice ID 37.
+SELECT COUNT(InvoiceLineId) AS "# of Lines on Invoice 37"
+FROM InvoiceLine
+WHERE InvoiceID = 37
+
 --11 Looking at the InvoiceLine table, provide a query that COUNTs the number of line items for each Invoice. HINT: GROUP BY
+
+
 --12 Provide a query that includes the track name with each invoice line item.
 --13 Provide a query that includes the purchased track name AND artist name with each invoice line item.
 --14 Provide a query that shows the # of invoices per country. HINT: GROUP BY
