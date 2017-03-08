@@ -88,7 +88,10 @@ JOIN Album a ON t.AlbumId = a.AlbumId
 JOIN Genre g ON t.GenreId = g.GenreId
 
 --17 Provide a query that shows all Invoices but includes the # of invoice line items.
-
+SELECT i.*, COUNT(il.InvoiceLineId) AS "Invoice Lines On Invoice"
+FROM Invoice i
+JOIN InvoiceLine il ON i.InvoiceId = il.InvoiceId
+GROUP BY i.InvoiceID
 
 --18 Provide a query that shows total sales made by each sales agent.
 
