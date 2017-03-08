@@ -24,6 +24,10 @@ FROM Invoice
 GROUP BY BillingCountry
 
 --06 Provide a query showing the invoices of customers who are from Brazil.
+SELECT *
+FROM Invoice
+WHERE BillingCountry = "Brazil"
+
 --07 Provide a query that shows the invoices associated with each sales agent. The resultant table should include the Sales Agent's full name.
 --08 Provide a query that shows the Invoice Total, Customer name, Country and Sale Agent name for all invoices and customers.
 --09 How many Invoices were there in 2009 and 2011? What are the respective total sales for each of those years?
