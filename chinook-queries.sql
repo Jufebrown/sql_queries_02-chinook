@@ -33,7 +33,14 @@ SELECT e.FirstName || " " || e.LastName AS "Sales Person", i.*
 FROM Employee e, Invoice i
 
 --08 Provide a query that shows the Invoice Total, Customer name, Country and Sale Agent name for all invoices and customers.
+SELECT c.FirstName || " " || c.LastName AS "Customer", i.Total, i.BillingCountry, e.FirstName || " " || e.LastName AS "Sales Agent"
+FROM Customer c
+JOIN Invoice i ON c.CustomerId = i.CustomerId
+JOIN Employee e ON c.SupportRepId = e.EmployeeId
+
 --09 How many Invoices were there in 2009 and 2011? What are the respective total sales for each of those years?
+
+
 --10 Looking at the InvoiceLine table, provide a query that COUNTs the number of line items for Invoice ID 37.
 --11 Looking at the InvoiceLine table, provide a query that COUNTs the number of line items for each Invoice. HINT: GROUP BY
 --12 Provide a query that includes the track name with each invoice line item.
