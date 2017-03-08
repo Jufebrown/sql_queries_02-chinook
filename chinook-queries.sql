@@ -136,7 +136,10 @@ JOIN Employee e ON c.SupportRepId = e.EmployeeId
 GROUP BY e.LastName
 
 --23 Provide a query that shows the total sales per country. Which country's customers spent the most?
-
+SELECT i.BillingCountry AS "Country", SUM(i.Total) AS "TotalSales"
+FROM Invoice i
+GROUP BY i.BillingCountry
+ORDER BY TotalSales DESC
 
 --24 Provide a query that shows the most purchased track of 2013.
 
