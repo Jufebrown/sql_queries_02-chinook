@@ -14,7 +14,9 @@ FROM Customer c, Invoice i
 WHERE i.BillingCountry = "Brazil"
 
 --04 Provide a query showing only the Employees who are Sales Agents.
-
+SELECT FirstName, LastName, Title
+FROM Employee
+WHERE Title = "Sales Support Agent"
 
 --05 Provide a query showing a unique list of billing countries from the Invoice table.
 --06 Provide a query showing the invoices of customers who are from Brazil.
