@@ -160,6 +160,14 @@ ORDER BY NumberPurchased DESC
 LIMIT 5
 
 --26 Provide a query that shows the top 3 best selling artists.
-
+SELECT a.Name AS "Artist", COUNT(il.InvoiceLineId) AS "TracksPurchased"
+FROM Invoice i
+JOIN InvoiceLine il ON i.InvoiceID = il.InvoiceId
+JOIN Track t ON il.TrackId = t.TrackId
+JOIN Album al ON t.AlbumId = al.AlbumId
+JOIN Artist a ON al.ArtistId = a.ArtistId
+GROUP BY a.Name
+ORDER BY TracksPurchased DESC
+LIMIT 3
 
 --27 Provide a query that shows the most purchased Media Type.
