@@ -39,7 +39,13 @@ JOIN Invoice i ON c.CustomerId = i.CustomerId
 JOIN Employee e ON c.SupportRepId = e.EmployeeId
 
 --09 How many Invoices were there in 2009 and 2011? What are the respective total sales for each of those years?
+SELECT COUNT(InvoiceId) AS "# of 2009 Invoices", SUM(Total) AS "2009 InvoicesTotal"
+FROM Invoice
+WHERE InvoiceDate LIKE "2009%"
 
+SELECT COUNT(InvoiceId) AS "# of 2011 Invoices", SUM(Total) AS "2011 InvoicesTotal"
+FROM Invoice
+WHERE InvoiceDate LIKE "2011%"
 
 --10 Looking at the InvoiceLine table, provide a query that COUNTs the number of line items for Invoice ID 37.
 --11 Looking at the InvoiceLine table, provide a query that COUNTs the number of line items for each Invoice. HINT: GROUP BY
