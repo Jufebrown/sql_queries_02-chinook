@@ -111,7 +111,14 @@ ORDER BY TotalSales DESC
 LIMIT 1
 
 --20 Which sales agent made the most in sales in 2010?
-
+SELECT e.FirstName || " " || e.LastName AS "Sales Agent", SUM(i.Total) AS "TotalSales"
+FROM Invoice i
+JOIN Customer c ON i.CustomerId = c.CustomerId
+JOIN Employee e ON c.SupportRepId = e.EmployeeId
+WHERE i.InvoiceDate LIKE "2010%"
+GROUP BY e.LastName
+ORDER BY TotalSales DESC
+LIMIT 1
 
 --21 Which sales agent made the most in sales over all?
 
