@@ -53,7 +53,9 @@ FROM InvoiceLine
 WHERE InvoiceID = 37
 
 --11 Looking at the InvoiceLine table, provide a query that COUNTs the number of line items for each Invoice. HINT: GROUP BY
-
+SELECT InvoiceId, COUNT(InvoiceLineId) AS "# Line Items"
+FROM InvoiceLine
+GROUP BY InvoiceId
 
 --12 Provide a query that includes the track name with each invoice line item.
 --13 Provide a query that includes the purchased track name AND artist name with each invoice line item.
