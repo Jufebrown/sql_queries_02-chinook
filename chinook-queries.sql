@@ -81,7 +81,11 @@ JOIN Playlist p ON pl.PlaylistId = p.PlaylistId
 GROUP BY p.Name
 
 --16 Provide a query that shows all the Tracks, but displays no IDs. The resultant table should include the Album name, Media type and Genre.
-
+SELECT t.Name AS "Track Name", a.Title AS "Album Title", m.Name AS "Media Type", g.Name AS "Genre", t.Composer, t.Milliseconds, t.Bytes, t.UnitPrice
+FROM Track t
+JOIN MediaType m ON t.MediaTypeId = m.MediaTypeId
+JOIN Album a ON t.AlbumId = a.AlbumId
+JOIN Genre g ON t.GenreId = g.GenreId
 
 --17 Provide a query that shows all Invoices but includes the # of invoice line items.
 
