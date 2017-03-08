@@ -147,11 +147,17 @@ FROM Invoice i
 JOIN InvoiceLine il ON i.InvoiceID = il.InvoiceId
 JOIN Track t ON il.TrackId = t.TrackId
 WHERE i.InvoiceDate LIKE "2013%"
-GROUP BY i.InvoiceDate
+GROUP BY t.Name
 ORDER BY NumberPurchased DESC
 
 --25 Provide a query that shows the top 5 most purchased tracks over all.
-
+SELECT t.Name AS "Track Name", COUNT(il.InvoiceLineId) AS "NumberPurchased"
+FROM Invoice i
+JOIN InvoiceLine il ON i.InvoiceID = il.InvoiceId
+JOIN Track t ON il.TrackId = t.TrackId
+GROUP BY t.Name
+ORDER BY NumberPurchased DESC
+LIMIT 5
 
 --26 Provide a query that shows the top 3 best selling artists.
 
