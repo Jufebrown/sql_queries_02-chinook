@@ -142,7 +142,13 @@ GROUP BY i.BillingCountry
 ORDER BY TotalSales DESC
 
 --24 Provide a query that shows the most purchased track of 2013.
-
+SELECT t.Name AS "Track Name", COUNT(il.InvoiceLineId) AS "NumberPurchased"
+FROM Invoice i
+JOIN InvoiceLine il ON i.InvoiceID = il.InvoiceId
+JOIN Track t ON il.TrackId = t.TrackId
+WHERE i.InvoiceDate LIKE "2013%"
+GROUP BY i.InvoiceDate
+ORDER BY NumberPurchased DESC
 
 --25 Provide a query that shows the top 5 most purchased tracks over all.
 
