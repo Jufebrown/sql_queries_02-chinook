@@ -29,6 +29,9 @@ FROM Invoice
 WHERE BillingCountry = "Brazil"
 
 --07 Provide a query that shows the invoices associated with each sales agent. The resultant table should include the Sales Agent's full name.
+SELECT e.FirstName || " " || e.LastName AS "Sales Person", i.*
+FROM Employee e, Invoice i
+
 --08 Provide a query that shows the Invoice Total, Customer name, Country and Sale Agent name for all invoices and customers.
 --09 How many Invoices were there in 2009 and 2011? What are the respective total sales for each of those years?
 --10 Looking at the InvoiceLine table, provide a query that COUNTs the number of line items for Invoice ID 37.
