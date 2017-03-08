@@ -130,7 +130,10 @@ ORDER BY TotalSales DESC
 LIMIT 1
 
 --22 Provide a query that shows the # of customers assigned to each sales agent.
-
+SELECT e.FirstName || " " || e.LastName AS "Sales Agent", COUNT(c.CustomerId) AS "Number of Customers"
+FROM Customer c
+JOIN Employee e ON c.SupportRepId = e.EmployeeId
+GROUP BY e.LastName
 
 --23 Provide a query that shows the total sales per country. Which country's customers spent the most?
 
