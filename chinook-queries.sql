@@ -9,9 +9,13 @@ FROM Customer
 WHERE Country = "Brazil"
 
 --03 Provide a query showing the Invoices of customers who are from Brazil. The resultant table should show the customer's full name, Invoice ID, Date of the invoice and billing country.
-
+SELECT c.FirstName, c.LastName, i.InvoiceId, i.InvoiceDate, i.BillingCountry
+FROM Customer c, Invoice i
+WHERE i.BillingCountry = "Brazil"
 
 --04 Provide a query showing only the Employees who are Sales Agents.
+
+
 --05 Provide a query showing a unique list of billing countries from the Invoice table.
 --06 Provide a query showing the invoices of customers who are from Brazil.
 --07 Provide a query that shows the invoices associated with each sales agent. The resultant table should include the Sales Agent's full name.
