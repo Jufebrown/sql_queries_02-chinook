@@ -121,7 +121,13 @@ ORDER BY TotalSales DESC
 LIMIT 1
 
 --21 Which sales agent made the most in sales over all?
-
+SELECT e.FirstName || " " || e.LastName AS "Sales Agent", SUM(i.Total) AS "TotalSales"
+FROM Invoice i
+JOIN Customer c ON i.CustomerId = c.CustomerId
+JOIN Employee e ON c.SupportRepId = e.EmployeeId
+GROUP BY e.LastName
+ORDER BY TotalSales DESC
+LIMIT 1
 
 --22 Provide a query that shows the # of customers assigned to each sales agent.
 
