@@ -1,6 +1,16 @@
 --01 Provide a query showing Customers (just their full names, customer ID and country) who are not in the US.
+SELECT FirstName, LastName, CustomerId, Country
+FROM Customer
+WHERE Country <> "USA"
+
 --02 Provide a query only showing the Customers from Brazil.
+SELECT FirstName, LastName, CustomerId, Country
+FROM Customer
+WHERE Country = "Brazil"
+
 --03 Provide a query showing the Invoices of customers who are from Brazil. The resultant table should show the customer's full name, Invoice ID, Date of the invoice and billing country.
+
+
 --04 Provide a query showing only the Employees who are Sales Agents.
 --05 Provide a query showing a unique list of billing countries from the Invoice table.
 --06 Provide a query showing the invoices of customers who are from Brazil.
