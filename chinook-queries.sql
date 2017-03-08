@@ -171,3 +171,11 @@ ORDER BY TracksPurchased DESC
 LIMIT 3
 
 --27 Provide a query that shows the most purchased Media Type.
+SELECT m.Name AS "Media Type", COUNT(il.InvoiceLineId) AS "NumberPurchased"
+FROM Invoice i
+JOIN InvoiceLine il ON i.InvoiceID = il.InvoiceId
+JOIN Track t ON il.TrackId = t.TrackId
+JOIN MediaType m ON t.MediaTypeId = m.MediaTypeId
+GROUP BY m.Name
+ORDER BY NumberPurchased DESC
+LIMIT 1
